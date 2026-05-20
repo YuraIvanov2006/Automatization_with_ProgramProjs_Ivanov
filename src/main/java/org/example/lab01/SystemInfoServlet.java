@@ -26,7 +26,8 @@ public class SystemInfoServlet extends HttpServlet {
         long totalRamBytes = 0;
         long freeRamBytes = 0;
 
-        if (osMxBean instanceof com.sun.management.OperatingSystemMXBean sunOs) {
+        if (osMxBean instanceof com.sun.management.OperatingSystemMXBean) {
+            com.sun.management.OperatingSystemMXBean sunOs = (com.sun.management.OperatingSystemMXBean) osMxBean;
             totalRamBytes = sunOs.getTotalMemorySize();
             freeRamBytes = sunOs.getFreeMemorySize();
         }
@@ -40,7 +41,8 @@ public class SystemInfoServlet extends HttpServlet {
         long jvmUsedMem = jvmTotalMem - jvmFreeMem;
 
         String cpuLoadStr = "N/A";
-        if (osMxBean instanceof com.sun.management.OperatingSystemMXBean sunOs) {
+        if (osMxBean instanceof com.sun.management.OperatingSystemMXBean) {
+            com.sun.management.OperatingSystemMXBean sunOs = (com.sun.management.OperatingSystemMXBean) osMxBean;
             double load = sunOs.getCpuLoad();
             if (load >= 0) cpuLoadStr = String.format("%.1f%%", load * 100);
         }
