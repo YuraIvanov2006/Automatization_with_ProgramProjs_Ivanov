@@ -1,0 +1,106 @@
+package org.example.lab01;
+
+import java.io.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+
+@WebServlet(name = "ivanovServlet", value = "/ivanov")
+public class IvanovServlet extends HttpServlet {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html lang=\"uk\">");
+        out.println("<head>");
+        out.println("  <meta charset=\"UTF-8\">");
+        out.println("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        out.println("  <title>Студент — Іванов</title>");
+        out.println("  <style>");
+        out.println("    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');");
+        out.println("    * { margin: 0; padding: 0; box-sizing: border-box; }");
+        out.println("    body {");
+        out.println("      font-family: 'Inter', sans-serif;");
+        out.println("      min-height: 100vh;");
+        out.println("      display: flex;");
+        out.println("      align-items: center;");
+        out.println("      justify-content: center;");
+        out.println("      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);");
+        out.println("      overflow: hidden;");
+        out.println("    }");
+        out.println("    .card {");
+        out.println("      background: rgba(255,255,255,0.05);");
+        out.println("      backdrop-filter: blur(20px);");
+        out.println("      border: 1px solid rgba(255,255,255,0.15);");
+        out.println("      border-radius: 24px;");
+        out.println("      padding: 60px 80px;");
+        out.println("      text-align: center;");
+        out.println("      box-shadow: 0 25px 60px rgba(0,0,0,0.4), 0 0 80px rgba(120,80,255,0.2);");
+        out.println("      animation: fadeIn 0.8s ease;");
+        out.println("    }");
+        out.println("    @keyframes fadeIn {");
+        out.println("      from { opacity: 0; transform: translateY(30px); }");
+        out.println("      to   { opacity: 1; transform: translateY(0); }");
+        out.println("    }");
+        out.println("    .label {");
+        out.println("      font-size: 0.85rem;");
+        out.println("      letter-spacing: 0.3em;");
+        out.println("      text-transform: uppercase;");
+        out.println("      color: rgba(200,180,255,0.7);");
+        out.println("      margin-bottom: 16px;");
+        out.println("    }");
+        out.println("    .surname {");
+        out.println("      font-size: 5rem;");
+        out.println("      font-weight: 900;");
+        out.println("      background: linear-gradient(90deg, #a78bfa, #818cf8, #38bdf8);");
+        out.println("      -webkit-background-clip: text;");
+        out.println("      -webkit-text-fill-color: transparent;");
+        out.println("      background-clip: text;");
+        out.println("      line-height: 1.1;");
+        out.println("      letter-spacing: -2px;");
+        out.println("    }");
+        out.println("    .divider {");
+        out.println("      width: 60px;");
+        out.println("      height: 3px;");
+        out.println("      background: linear-gradient(90deg, #a78bfa, #38bdf8);");
+        out.println("      border-radius: 2px;");
+        out.println("      margin: 24px auto;");
+        out.println("    }");
+        out.println("    .subtitle {");
+        out.println("      font-size: 1rem;");
+        out.println("      color: rgba(200,180,255,0.6);");
+        out.println("      font-weight: 300;");
+        out.println("    }");
+        out.println("    .link {");
+        out.println("      display: inline-block;");
+        out.println("      margin-top: 32px;");
+        out.println("      padding: 12px 28px;");
+        out.println("      background: linear-gradient(135deg, #a78bfa33, #38bdf833);");
+        out.println("      border: 1px solid rgba(167,139,250,0.4);");
+        out.println("      border-radius: 50px;");
+        out.println("      color: #c4b5fd;");
+        out.println("      text-decoration: none;");
+        out.println("      font-size: 0.9rem;");
+        out.println("      transition: all 0.3s ease;");
+        out.println("    }");
+        out.println("    .link:hover {");
+        out.println("      background: linear-gradient(135deg, #a78bfa55, #38bdf855);");
+        out.println("      border-color: rgba(167,139,250,0.8);");
+        out.println("      transform: translateY(-2px);");
+        out.println("      box-shadow: 0 8px 20px rgba(167,139,250,0.2);");
+        out.println("    }");
+        out.println("  </style>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("  <div class=\"card\">");
+        out.println("    <p class=\"label\">Прізвище студента</p>");
+        out.println("    <h1 class=\"surname\">Іванов</h1>");
+        out.println("    <div class=\"divider\"></div>");
+        out.println("    <p class=\"subtitle\">Jakarta EE · Lab 01</p>");
+        out.println("    <a href=\"/Lab01/system-info\" class=\"link\">&#x1F4BB; Інформація про систему &rarr;</a>");
+        out.println("  </div>");
+        out.println("</body>");
+        out.println("</html>");
+    }
+}
