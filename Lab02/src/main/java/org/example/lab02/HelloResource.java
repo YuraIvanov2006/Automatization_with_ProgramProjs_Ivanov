@@ -11,4 +11,5 @@ public class HelloResource {
     public String hello() {
         return "Hello, World!";
     }
+    // TODO: Реалізувати новий ендпоінт для лабораторної
 }
