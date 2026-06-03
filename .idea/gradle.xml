@@ -3,7 +3,24 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/Lab03/buildSrc" name="buildSrc">
+                <projects>
+                  <project path="$PROJECT_DIR$/Lab03/buildSrc" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Lab03" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Lab03" />
+            <option value="$PROJECT_DIR$/Lab03/buildSrc" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
